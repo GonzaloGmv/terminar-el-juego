@@ -9,8 +9,20 @@ def pedir_numero(MIN,MAX):
         else:
             if MIN <= respuesta <= MAX:
                 break
+    return respuesta
 
-def 
+def adivinar(MIN, MAX, NUM):
+    while True:
+        intento = pedir_numero(MIN, MAX)
+        if intento < NUM:
+            print("Te has quedado corto")
+        elif intento > NUM:
+            print("Te has pasado")
+        else:
+            print("Has acertado")
+            break
+    return intento
+
 print("1 - Nivel simple")
 print("2 - Nivel intermedio")
 print("3 - Nivel avanzado")
@@ -24,10 +36,12 @@ while True:
     else:
         if 1 <= nivel <= 4:
             break
-if nivel == 1:
-    
-elif nivel == 2:
 
+if nivel == 1:
+    intent1 = adivinar(0, 100, random.randrange(0, 101))
+elif nivel == 2:
+    intent2 = adivinar(0, 1000, random.randrange(0, 1001))
 elif nivel == 3:
-    
+    intent3 = adivinar(0, 1000000, random.randrange(0, 1000001))
 elif nivel == 4:
+    intent4 = adivinar(0, 1000000000000, random.randrange(0, 1000000000001))
