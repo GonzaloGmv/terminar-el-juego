@@ -1,18 +1,11 @@
-import random, juego
+import random, juego, menu
 
 print("1 - Nivel simple")
 print("2 - Nivel intermedio")
 print("3 - Nivel avanzado")
 print("4 - Nivel experto")
-while True:
-    nivel = input("Elija el nivel deseado: ")
-    try:
-        nivel = int(nivel)
-    except:
-        pass
-    else:
-        if 1 <= nivel <= 4:
-            break
+
+nivel = menu.nivel()
 
 if nivel == 1:
     intent1 = juego.adivinar(0, 100, random.randrange(0, 101))
