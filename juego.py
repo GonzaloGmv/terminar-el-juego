@@ -11,6 +11,7 @@ def pedir_numero(MIN,MAX):
     return respuesta
 
 def adivinar(MIN, MAX, NUM):
+    n_intentos = 0
     ganar = False
     while True:
         ayuda = input("Si desea ayuda para adivinar el numero escriba SI, si no la desea escriba NO: ")
@@ -23,17 +24,18 @@ def adivinar(MIN, MAX, NUM):
                 if ayuda == "SI":
                     while not ganar:
                         intento = pedir_numero(MIN, MAX)
+                        n_intentos = n_intentos + 1
                         if intento < NUM:
                             print("Te has quedado corto")
                         elif intento > NUM:
                             print("Te has pasado")
                         else:
-                            print("Has acertado")
+                            print("Has acertado en ", n_intentos, " intentos")
                             ganar = True
                 elif ayuda == "NO":
                     while not ganar:
                         intento = pedir_numero(MIN, MAX)
                         if intento == NUM:
-                            print("Has acertado")
+                            print("Has acertado en ", n_intentos, " intentos")
                             ganar = True
                 break  
