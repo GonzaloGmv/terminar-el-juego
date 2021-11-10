@@ -1,12 +1,6 @@
 import random, juego, menu
 
-print("1 - Nivel simple")
-print("2 - Nivel intermedio")
-print("3 - Nivel avanzado")
-print("4 - Nivel experto")
-
 nivel = menu.nivel()
-
 if nivel == 1:
     intent1 = juego.adivinar(0, 100, random.randrange(0, 101), 10)
 elif nivel == 2:
