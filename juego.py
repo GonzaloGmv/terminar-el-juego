@@ -10,7 +10,9 @@ def pedir_numero(MIN,MAX):
                 break
     return respuesta
 
-def adivinar(MIN, MAX, NUM, oportunidades):
+def adivinar(MIN, MAX, NUM, OPORTUNIDADES):
+    minim = MIN
+    maxim = MAX
     n_intentos = 0
     ganar = False
     while True:
@@ -22,7 +24,26 @@ def adivinar(MIN, MAX, NUM, oportunidades):
         else :
             if ayuda == "SI" or ayuda == "NO":
                 if ayuda == "SI":
-                    while not ganar and n_intentos < oportunidades:
+                    while not ganar and n_intentos < OPORTUNIDADES:
+                        intento = pedir_numero(MIN, MAX)
+                        n_intentos = n_intentos + 1
+                        if intento < NUM:
+                            print("Te has quedado corto")
+                            if intento > minim:
+                                minim = intento
+                            print("El numero esta entre ", minim, " y ", maxim)
+                        elif intento > NUM:
+                            print("Te has pasado")
+                            if intento < maxim:
+                                maxim = intento
+                            print("El numero esta entre ", minim, " y ", maxim)
+                        else:
+                            print("Has acertado en ", n_intentos, " intentos")
+                            ganar = True
+                    if not ganar:
+                        print("Has superado el numero maximo de intentos")
+                elif ayuda == "NO":
+                    while not ganar and n_intentos < OPORTUNIDADES:
                         intento = pedir_numero(MIN, MAX)
                         n_intentos = n_intentos + 1
                         if intento < NUM:
@@ -30,15 +51,6 @@ def adivinar(MIN, MAX, NUM, oportunidades):
                         elif intento > NUM:
                             print("Te has pasado")
                         else:
-                            print("Has acertado en ", n_intentos, " intentos")
-                            ganar = True
-                    if not ganar:
-                        print("Has superado el numero maximo de intentos")
-                elif ayuda == "NO":
-                    while not ganar and n_intentos < oportunidades:
-                        intento = pedir_numero(MIN, MAX)
-                        n_intentos = n_intentos + 1
-                        if intento == NUM:
                             print("Has acertado en ", n_intentos, " intentos")
                             ganar = True
                     if not ganar:
