@@ -4,7 +4,7 @@ Mi dirección de github para este repositorio es:[ github](https://github.com/Go
 https://github.com/GonzaloGmv/terminar-el-juego.git
 
 El diagrama de flujo es:
-![ diagrama de flujo](/GonzaloGmv/terminar-el-juego/diagrama_termina_el_juego.jpg)
+![ diagrama de flujo](/diagrama_termina_el_juego.jpg)
 
 El diagrama de flujo en html es el siguiente:
 ```<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=5,IE=9" ><![endif]-->
